@@ -1,5 +1,6 @@
 package com.example.rmaahmadov.tictactoe;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewAfterAnime;
     private Button buttonAfterAnime;
     private LinearLayout linearLayout;
+    private ConstraintLayout constraintLayout;
     //0is deactive 1 is active
     int activePlayer = 0;
     //2is played
@@ -42,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 if(gamePlayer[winningposition[0]]==gamePlayer[winningposition[1]]&&
                         gamePlayer[winningposition[1]]==gamePlayer[winningposition[2]]&&
                         gamePlayer[winningposition[0]]!=2){
-                        textViewAfterAnime.setVisibility(View.VISIBLE);
-                        buttonAfterAnime.setVisibility(View.VISIBLE);
+                        linearLayout.setVisibility(View.VISIBLE);
+                        constraintLayout.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textViewAfterAnime = findViewById(R.id.textView2);
-        buttonAfterAnime = findViewById(R.id.newGameBtn);
+        linearLayout = findViewById(R.id.linearlayout);
+        constraintLayout=findViewById(R.id.constrainLayout);
     }
 }
